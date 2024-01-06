@@ -28,4 +28,9 @@ public class SaleServiceImpl implements SaleService{
             throw new SaleNotFoundException(String.format("Sale id %s is not in our database",id));
         });
     }
+
+    @Override
+    public Sale addNewSalte(Sale sale) {
+        return null;
+    }
 }

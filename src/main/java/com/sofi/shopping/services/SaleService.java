@@ -10,5 +10,7 @@ public interface SaleService {
     Set<Sale> getByDate(Date date) throws RuntimeException;
     Optional<Sale>getById(Long id)throws RuntimeException;
 
+    Sale addNewSalte(Sale sale);
+
 
 }
