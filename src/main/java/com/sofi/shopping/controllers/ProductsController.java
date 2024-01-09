@@ -3,6 +3,7 @@ package com.sofi.shopping.controllers;
 import com.sofi.shopping.entities.Product;
 import com.sofi.shopping.exceptions.ProductNotFoundException;
 import com.sofi.shopping.services.ProductService;
+import jakarta.validation.Valid;
 import lombok.AllArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.http.HttpStatus;
@@ -38,7 +39,7 @@ public class ProductsController {
     }
 
     @PostMapping()
-    public ResponseEntity addProduct(@RequestBody Product product){
+    public ResponseEntity addProduct(@Valid @RequestBody Product product){
         return new ResponseEntity(productService.createProduct(product),HttpStatus.CREATED);
     }
 
