@@ -19,7 +19,7 @@ public class SaleServiceImpl implements SaleService{
     private SaleRepository saleRepository;
     @Override
     public Set<Sale> getByDate(Date date) throws RuntimeException {
-        return saleRepository.getByDate(date);
+        return saleRepository.getByDateTime(date);
     }
 
     @Override
@@ -36,7 +36,7 @@ public class SaleServiceImpl implements SaleService{
     }
 
     @Override
-    public Sale addNewSalte(Sale sale) {
-        return null;
+    public Sale addNewSale(Sale sale) {
+        return saleRepository.save(sale);
     }
 }

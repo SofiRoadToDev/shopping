@@ -8,5 +8,5 @@ import java.util.Set;
 
 public interface SaleRepository extends CrudRepository<Sale,Long> {
 
-    Set<Sale> getByDate(Date date);
+    Set<Sale> getByDateTime(Date date);
 }

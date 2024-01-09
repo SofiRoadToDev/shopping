@@ -11,7 +11,7 @@ public interface SaleService {
     Optional<Sale>getById(Long id)throws RuntimeException;
 
     Set<Sale>getAllSales();
-    Sale addNewSalte(Sale sale);
+    Sale addNewSale(Sale sale);
 
 
 }

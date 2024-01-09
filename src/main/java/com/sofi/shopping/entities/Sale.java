@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.math.BigDecimal;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
@@ -18,10 +19,13 @@ public class Sale {
     private Long id;
 
     @Temporal(TemporalType.TIMESTAMP)
-    private Date dateAndTime;
+    private Date dateTime;
 
-    @OneToMany(mappedBy = "sale",cascade = CascadeType.ALL,orphanRemoval = true)
+    @OneToMany(mappedBy = "sale",cascade = {CascadeType.MERGE,CascadeType.PERSIST},orphanRemoval = true)
     Set<SaleDetails> saleDetails=new HashSet<>();
+
+    @Column(precision = 10,scale = 2)
+    private BigDecimal totalPrice;
 
 
 }
