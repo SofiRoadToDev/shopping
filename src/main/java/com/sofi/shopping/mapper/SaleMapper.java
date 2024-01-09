@@ -15,6 +15,9 @@ public interface SaleMapper {
     Sale saleDTOtoSale(SaleDTO saleDTO);
     SaleDTO saleToSaleDTO(Sale sale);
 
+    List<SaleDTO>saleListToSaleDTOList(List<Sale>sales);
+
+    List<Sale>saleDTOListToSaleList(List<SaleDTO>saleDTOS);
     Product productToCartProductDTO(CartProductDTO productDTO);
     CartProductDTO productToCarProductDTO(Product product);
 }

@@ -30,6 +30,12 @@ public class SaleServiceImpl implements SaleService{
     }
 
     @Override
+    public Set<Sale> getAllSales() {
+        Set<Sale>sales= (Set<Sale>) saleRepository.findAll();
+        return sales;
+    }
+
+    @Override
     public Sale addNewSalte(Sale sale) {
         return null;
     }
